@@ -50,7 +50,7 @@ public class FilmManagerTest {
     public void findLast() {
 
         PosterItems[] expected = {item7, item6, item5, item4, item3};
-        PosterItems[] actual = manager.gfindLast();
+        PosterItems[] actual = manager.getfindLast();
 
         Assertions.assertArrayEquals(expected, actual);
 

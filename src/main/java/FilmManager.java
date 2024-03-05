@@ -28,7 +28,7 @@ public class FilmManager {
         return all;
     }
 
-    public PosterItems[] gfindLast() {
+    public PosterItems[] getfindLast() {
 
         PosterItems[] all = repo.getItems();
         int[] resultLength = new int[5];
