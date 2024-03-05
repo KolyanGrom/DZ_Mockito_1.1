@@ -16,13 +16,13 @@ public class FilmManagerTest {
 
     @BeforeEach
     public void setup() {
-        manager.findAll(item1);
-        manager.findAll(item2);
-        manager.findAll(item3);
-        manager.findAll(item4);
-        manager.findAll(item5);
-        manager.findAll(item6);
-        manager.findAll(item7);
+        manager.add(item1);
+        manager.add(item2);
+        manager.add(item3);
+        manager.add(item4);
+        manager.add(item5);
+        manager.add(item6);
+        manager.add(item7);
     }
 
 
@@ -31,6 +31,26 @@ public class FilmManagerTest {
 
         PosterItems[] expected = {item7, item6, item5, item4, item3, item2, item1};
         PosterItems[] actual = manager.getItems();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldReversFilms() {
+
+        PosterItems[] expected = {item1, item2, item3, item4, item5, item6, item7};
+        PosterItems[] actual = manager.getItemsReverse();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void findLast() {
+
+        PosterItems[] expected = {item7, item6, item5, item4, item3};
+        PosterItems[] actual = manager.gfindLast();
 
         Assertions.assertArrayEquals(expected, actual);
 

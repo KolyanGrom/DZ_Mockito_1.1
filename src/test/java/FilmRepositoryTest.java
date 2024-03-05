@@ -33,13 +33,31 @@ public class FilmRepositoryTest {
     @Test
     public void shouldIdFilm() {
         FilmRepository repo = new FilmRepository();
-        repo.save(item1);
+        repo.save(item2);
 
 
-        int expected = 1;
-        int actual = item1.getId();
+        int expected = 2;
+        int actual = item2.getId();
 
         Assertions.assertEquals(expected, actual);
     }
 
+
+    @Test
+    void removeFilm() {
+        FilmRepository repo = new FilmRepository();
+        repo.save(item1);
+        repo.save(item2);
+        repo.save(item3);
+        repo.save(item4);
+        repo.save(item5);
+        repo.save(item6);
+        repo.save(item7);
+        repo.removeFilm(item2.getId());
+
+        PosterItems[] expected = {item1, item3, item4, item5, item6, item7};
+        PosterItems[] actual = repo.getItems();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
