@@ -1,15 +1,3 @@
-class PosterItems {
-    private int id;
-    private String genreFilm;
-    private String filmName;
-
-    public PosterItems(int id, String genreFilm, String filmName) {
-        this.id = id;
-        this.genreFilm = genreFilm;
-        this.filmName = filmName;
-    }
-}
-
 public class FilmRepository {
     private PosterItems[] items = new PosterItems[0];
     private int limit;
